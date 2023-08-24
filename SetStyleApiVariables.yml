@@ -1,0 +1,27 @@
+steps:
+- ${{ if and(eq(parameters.appDeploymentTarget, 'AppService'), eq(parameters.product.name, 'PartyConsoleStyle'), eq(parameters.key, 'Api-AppServiceMatrix')) }}:
+  - pwsh: |
+      "##vso[task.setvariable variable=Api.appServiceNames]$(consoles.webAppName)"
+    name: SetAppServiceList
+    displayName: Set App Service List
+
+- ${{ if and(eq(parameters.appDeploymentTarget, 'AppService'), eq(parameters.product.name, 'ClaimsConsoleStyle'), eq(parameters.key, 'Api-AppServiceMatrix')) }}:
+  - pwsh: |
+      "##vso[task.setvariable variable=Api.appServiceNames]$(consoles.webAppName)"
+    name: SetAppServiceList
+    displayName: Set App Service List
+
+- ${{ if and(eq(parameters.appDeploymentTarget, 'AppService'), eq(parameters.product.name, 'ClaimsStyle'), eq(parameters.key, 'Api-AppServiceMatrix')) }}:
+  - pwsh: |
+      "##vso[task.setvariable variable=Api.appServiceNames]$(claims.web.webAppName)"
+    name: SetAppServiceList
+    displayName: Set App Service List
+
+- ${{ if and(eq(parameters.appDeploymentTarget, 'AppService'), eq(parameters.key, 'Api')) }}:
+  - pwsh: |
+      "##vso[task.setvariable variable=Api.archivePattern]${{ parameters.apiArchivePattern }}"
+      "##vso[task.setvariable variable=Api.extractFolder]${{ parameters.apiExtractFolder }}"
+      "##vso[task.setvariable variable=Api.packageId]${{ parameters.apiPackageId }}"
+      "##vso[task.setvariable variable=Api.pacakgeVersion]${{ parameters.apiPacakgeVersion }}"
+    name: SetAppServiceDeploymentVariables
+    displayName: Set App Service Deployment Variables
