@@ -49,10 +49,10 @@ You can directly call a particular template as per the requirement. for example:
   - template: frameWork/common/setVariables/SetStyleApiVariables.yml@Template
       parameters:
         ${{ insert }}: ${{ parameters }}
-        apiArchivePattern: styleapi-party.$(build.configVersion).*
-        apiExtractFolder: $(build.configVersion)/styleapi-party
-        apiPackageId: styleapi-party
-        apiPacakgeVersion: $(build.configVersion)
+        apiArchivePattern: ${{ parameters.apiArchivePattern }}
+        apiExtractFolder: ${{ parameters.apiExtractFolder }}
+        apiPackageId: ${{ parameters.apiPackageId }}
+        apiPacakgeVersion: ${{ parameters.apiPacakgeVersion }}
 
   ```
 Make sure to adjust the repository name, branch name, and parameter values according to your project's requirements.
