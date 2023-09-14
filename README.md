@@ -3,7 +3,7 @@
 
 ## Pipeline Requirements
 
-The setVariable pipeline requires the following parameters to be defined:
+The pipeline requires the following parameters to be defined:
 Paramaters:
 
 
