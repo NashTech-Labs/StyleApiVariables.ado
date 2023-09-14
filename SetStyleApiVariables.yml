@@ -1,19 +1,19 @@
 steps:
 - ${{ if and(eq(parameters.appDeploymentTarget, 'AppService'), eq(parameters.product.name, 'PartyConsoleStyle'), eq(parameters.key, 'Api-AppServiceMatrix')) }}:
   - pwsh: |
-      "##vso[task.setvariable variable=Api.appServiceNames]$(consoles.webAppName)"
+      "##vso[task.setvariable variable=Api.appServiceNames]${{ parameters.webAppName }}"
     name: SetAppServiceList
     displayName: Set App Service List
 
 - ${{ if and(eq(parameters.appDeploymentTarget, 'AppService'), eq(parameters.product.name, 'ClaimsConsoleStyle'), eq(parameters.key, 'Api-AppServiceMatrix')) }}:
   - pwsh: |
-      "##vso[task.setvariable variable=Api.appServiceNames]$(consoles.webAppName)"
+      "##vso[task.setvariable variable=Api.appServiceNames]${{ parameters.webAppName }}"
     name: SetAppServiceList
     displayName: Set App Service List
 
 - ${{ if and(eq(parameters.appDeploymentTarget, 'AppService'), eq(parameters.product.name, 'ClaimsStyle'), eq(parameters.key, 'Api-AppServiceMatrix')) }}:
   - pwsh: |
-      "##vso[task.setvariable variable=Api.appServiceNames]$(claims.web.webAppName)"
+      "##vso[task.setvariable variable=Api.appServiceNames]${{ parameters.webAppName }}"
     name: SetAppServiceList
     displayName: Set App Service List
 
