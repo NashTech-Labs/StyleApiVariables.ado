@@ -23,7 +23,7 @@ Paramaters:
 | websiteWorkloadName | string | | | Optional | |
 | product.name | string | | | Required | |
 
-  These parameters provide multiple use case options for the setvariables templates pipeline, enable/disable flags for the utilization of different templates as per the requirements.
+  These parameters provide multiple use case options for this template, enable/disable flags for the utilization of different templates as per the requirements.
 
 
 ## Use Cases
